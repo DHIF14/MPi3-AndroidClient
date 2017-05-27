@@ -1,14 +1,16 @@
 package dhif14.mpi3_androidclient;
 
 import android.app.Activity;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import javax.xml.datatype.Duration;
 
 public class MainActivity extends Activity {
 
@@ -27,11 +29,12 @@ public class MainActivity extends Activity {
         btPlay = (Button)findViewById(R.id.btPlay);
 
         //Testing Data
-        model.add("Dere");
-        model.add("Oida");
+        model.add(new Song("King", "Kollegah", "3:31", BitmapFactory.decodeResource(getResources(), R.drawable.kollegah_king_cover)));
+        model.add(new Song("Alpha", "Kollegah", "2:21", BitmapFactory.decodeResource(getResources(), R.drawable.kollegah_king_cover)));
+        model.add(new Song("R.I.P.", "Kollegah", "3:24", BitmapFactory.decodeResource(getResources(), R.drawable.kollegah_king_cover)));
 
         //Setting Adapter
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, model.getSongList());
+        ListAdapter adapter = new CustomAdapter(this, model.getSongList());
         listView.setAdapter(adapter);
 
         //Event Handlers

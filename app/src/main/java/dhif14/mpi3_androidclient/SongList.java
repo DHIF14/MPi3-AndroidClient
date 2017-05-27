@@ -9,13 +9,13 @@ import java.util.List;
 
 public class SongList {
 
-    private List songlist = new ArrayList();
+    private List<Song> songlist = new ArrayList<>();
 
     public List getSongList() {
         return songlist;
     }
 
-    public void add(String song) {
+    public void add(Song song) {
         songlist.add(song);
     }
 }
