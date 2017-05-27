@@ -11,8 +11,8 @@ public class SongList {
 
     private List songlist = new ArrayList();
 
-    public Object[] getSongListeAsArray() {
-        return songlist.toArray();
+    public List getSongList() {
+        return songlist;
     }
 
     public void add(String song) {

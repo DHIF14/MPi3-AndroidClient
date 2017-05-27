@@ -6,7 +6,8 @@ package dhif14.mpi3_androidclient;
 
 public class Song {
 
-    private String title;
+    private String title, artist;
+    private double length;
 
     public String getTitle() {
         return title;
