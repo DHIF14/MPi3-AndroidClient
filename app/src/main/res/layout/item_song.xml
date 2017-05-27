@@ -7,7 +7,7 @@
     android:layout_marginBottom="3dp">
 
     <ImageView
-        android:id="@+id/imageViewCover"
+        android:id="@+id/ivCover"
         android:layout_width="66dp"
         android:layout_height="66dp"
         android:layout_marginRight="5dp"

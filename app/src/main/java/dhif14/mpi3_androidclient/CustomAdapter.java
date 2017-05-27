@@ -19,22 +19,26 @@ import java.util.List;
 public class CustomAdapter extends ArrayAdapter<Song>{
 
     public CustomAdapter(@NonNull Context context, List<Song> songlist) {
-        super(context, R.layout.custom_row, songlist);
+        super(context, R.layout.item_song, songlist);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        //Prepare inlater
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View customView = inflater.inflate(R.layout.custom_row, parent, false);
+        //Create View and set Layout
+        View customView = inflater.inflate(R.layout.item_song, parent, false);
 
+        //Inizializing
         Song song = getItem(position);
-        ImageView imageViewCover = (ImageView) customView.findViewById(R.id.imageViewCover);
+        ImageView ivCover = (ImageView) customView.findViewById(R.id.ivCover);
         TextView tvSongTitle = (TextView) customView.findViewById(R.id.tvSongTitle);
         TextView tvSongArtist = (TextView) customView.findViewById(R.id.tvSongArtist);
         TextView tvSongDuration = (TextView) customView.findViewById(R.id.tvSongDuration);
 
-        imageViewCover.setImageBitmap(song.getCover());
+        //setter
+        ivCover.setImageBitmap(song.getCover());
         tvSongTitle.setText(song.getTitle());
         tvSongArtist.setText(song.getArtist());
         tvSongDuration.setText(song.getLength());

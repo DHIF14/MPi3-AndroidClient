@@ -5,4 +5,8 @@ package dhif14.mpi3_androidclient;
  */
 
 public class Connection {
+
+    private static final String TAG = "Connection";
+
+
 }

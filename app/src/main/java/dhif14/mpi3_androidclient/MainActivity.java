@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
         ListAdapter adapter = new CustomAdapter(this, model.getSongList());
         listView.setAdapter(adapter);
 
-        //Event Handlers
+        //Event Listener
         btPlay.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this, parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
             }
         });
-        //Event Handlers End
+        //Event Listener End
 
 
     }
