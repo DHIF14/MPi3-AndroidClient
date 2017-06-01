@@ -42,7 +42,9 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //Todo: send Play message to Server
-                Toast.makeText(MainActivity.this, "DEERE", Toast.LENGTH_SHORT).show();
+                Connection c = new Connection(getBaseContext());
+                c.execute("DEEERE");
+
             }
         });
 
