@@ -19,7 +19,7 @@ import java.net.Socket;
 public class Connection extends AsyncTask<String, String, String>{
 
     private static final String TAG = "Connection";
-    public static final String SERVER_IP = "localhost";
+    public static final String SERVER_IP = "192.168.43.35";
     public static final int SERVER_PORT = 7777;
 
     private Socket connectionSocket;
@@ -40,10 +40,10 @@ public class Connection extends AsyncTask<String, String, String>{
                 bw = new BufferedWriter(new OutputStreamWriter(connectionSocket.getOutputStream()));
                 br = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 
-                return "true";
+                return "true connect";
             } catch (IOException e) {
                 Log.e(TAG, e.getMessage());
-                return "false";
+                return "false connect";
             }
         } else {
             try {
@@ -54,7 +54,7 @@ public class Connection extends AsyncTask<String, String, String>{
                 return br.readLine();
             } catch (IOException e) {
                 Log.e(TAG, e.getMessage());
-                return "false";
+                return "false connected";
             }
         }
     }

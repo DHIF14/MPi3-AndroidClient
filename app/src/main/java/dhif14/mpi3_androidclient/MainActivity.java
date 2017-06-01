@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     private SongList model;
     private ListView listView;
     private Button btPlay;
+    private Connection c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +43,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //Todo: send Play message to Server
-                Connection c = new Connection(getBaseContext());
+                c = new Connection(getBaseContext());
                 c.execute("DEEERE");
-
             }
         });
 
