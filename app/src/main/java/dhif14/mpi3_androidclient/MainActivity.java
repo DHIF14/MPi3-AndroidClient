@@ -3,6 +3,7 @@ package dhif14.mpi3_androidclient;
 import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -10,9 +11,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+
 import javax.xml.datatype.Duration;
 
 public class MainActivity extends Activity {
+
+    private static final String TAG = "MainActivity";
 
     private SongList model;
     private ListView listView;
@@ -27,7 +32,7 @@ public class MainActivity extends Activity {
         //Initializing
         model = new SongList();
         listView = (ListView) findViewById(R.id.lvSongs);
-        btPlay = (Button)findViewById(R.id.btPlay);
+        btPlay = (Button) findViewById(R.id.btPlay);
 
         //Testing Data
         model.add(new Song("King", "Kollegah", "3:31", BitmapFactory.decodeResource(getResources(), R.drawable.kollegah_king_cover)));
@@ -39,7 +44,7 @@ public class MainActivity extends Activity {
         listView.setAdapter(adapter);
 
         //Event Listener
-        btPlay.setOnClickListener(new Button.OnClickListener(){
+        btPlay.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Todo: send Play message to Server
@@ -48,7 +53,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Testing Toast
